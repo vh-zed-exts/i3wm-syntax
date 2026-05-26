@@ -8,4 +8,4 @@ repository = "https://github.com/vh-zed-exts/i3wm-syntax"
 
 [grammars.i3config]
 repository = "https://github.com/vh-zed-exts/i3wm-syntax"
-commit = "b8fdf38b79e3bc9d40bd583242ed4df9966fe5ad"
+commit = "43c8d4f78b5b140721e3069689f3fef3564a0376"
