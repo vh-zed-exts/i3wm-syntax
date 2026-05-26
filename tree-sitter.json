@@ -1,0 +1,20 @@
+{
+  "grammars": [
+    {
+      "name": "i3config",
+      "camelcase": "I3config",
+      "scope": "source.i3config",
+      "path": ".",
+      "file-types": [
+        "i3config",
+        "swayconfig"
+      ],
+      "highlights": "languages/i3config/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for i3/sway config files"
+  }
+}

@@ -1,0 +1,14 @@
+name = "i3/Sway Config"
+grammar = "i3config"
+path_suffixes = ["i3/config", "i3config", "swayconfig"]
+line_comments = ["# "]
+tab_size = 4
+
+[overrides.string]
+word_characters = ["-", "/", "."]
+
+brackets = [
+  { start = "{", end = "}", close = true, newline = true },
+  { start = "[", end = "]", close = true, newline = false },
+  { start = "\"", end = "\"", close = true, newline = false, not_in = ["string"] },
+]

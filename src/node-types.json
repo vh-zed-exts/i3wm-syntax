@@ -1,0 +1,786 @@
+[
+  {
+    "type": "assign_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "criteria",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bar_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bindcode_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "flag",
+          "named": true
+        },
+        {
+          "type": "keycombo",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bindsym_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "flag",
+          "named": true
+        },
+        {
+          "type": "keycombo",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "command_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "criteria",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "criteria_pair",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "criteria_pair",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "criteria_key",
+          "named": true
+        },
+        {
+          "type": "criteria_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "criteria_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "string",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exec_always_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "flag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exec_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "flag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "for_window_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "criteria",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "include_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "mode_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "flag",
+          "named": true
+        },
+        {
+          "type": "statement",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "set_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "value",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "assign_statement",
+          "named": true
+        },
+        {
+          "type": "bar_block",
+          "named": true
+        },
+        {
+          "type": "bindcode_statement",
+          "named": true
+        },
+        {
+          "type": "bindsym_statement",
+          "named": true
+        },
+        {
+          "type": "block_statement",
+          "named": true
+        },
+        {
+          "type": "command_statement",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "exec_always_statement",
+          "named": true
+        },
+        {
+          "type": "exec_statement",
+          "named": true
+        },
+        {
+          "type": "for_window_statement",
+          "named": true
+        },
+        {
+          "type": "include_statement",
+          "named": true
+        },
+        {
+          "type": "mode_block",
+          "named": true
+        },
+        {
+          "type": "set_statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "string",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "color",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unit_value",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "word",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "assign",
+    "named": false
+  },
+  {
+    "type": "bar",
+    "named": false
+  },
+  {
+    "type": "bindcode",
+    "named": false
+  },
+  {
+    "type": "bindswitch",
+    "named": false
+  },
+  {
+    "type": "bindsym",
+    "named": false
+  },
+  {
+    "type": "border",
+    "named": false
+  },
+  {
+    "type": "client.background",
+    "named": false
+  },
+  {
+    "type": "client.focused",
+    "named": false
+  },
+  {
+    "type": "client.focused_inactive",
+    "named": false
+  },
+  {
+    "type": "client.placeholder",
+    "named": false
+  },
+  {
+    "type": "client.unfocused",
+    "named": false
+  },
+  {
+    "type": "client.urgent",
+    "named": false
+  },
+  {
+    "type": "color",
+    "named": true
+  },
+  {
+    "type": "command",
+    "named": true
+  },
+  {
+    "type": "criteria_key",
+    "named": true
+  },
+  {
+    "type": "default_border",
+    "named": false
+  },
+  {
+    "type": "default_floating_border",
+    "named": false
+  },
+  {
+    "type": "default_orientation",
+    "named": false
+  },
+  {
+    "type": "escape_sequence",
+    "named": true
+  },
+  {
+    "type": "exec",
+    "named": false
+  },
+  {
+    "type": "exec_always",
+    "named": false
+  },
+  {
+    "type": "exit",
+    "named": false
+  },
+  {
+    "type": "flag",
+    "named": true
+  },
+  {
+    "type": "floating",
+    "named": false
+  },
+  {
+    "type": "floating_maximum_size",
+    "named": false
+  },
+  {
+    "type": "floating_minimum_size",
+    "named": false
+  },
+  {
+    "type": "floating_modifier",
+    "named": false
+  },
+  {
+    "type": "focus",
+    "named": false
+  },
+  {
+    "type": "focus_follows_mouse",
+    "named": false
+  },
+  {
+    "type": "focus_on_window_activation",
+    "named": false
+  },
+  {
+    "type": "focus_wrapping",
+    "named": false
+  },
+  {
+    "type": "font",
+    "named": false
+  },
+  {
+    "type": "for_window",
+    "named": false
+  },
+  {
+    "type": "fullscreen",
+    "named": false
+  },
+  {
+    "type": "gaps",
+    "named": false
+  },
+  {
+    "type": "hide_edge_borders",
+    "named": false
+  },
+  {
+    "type": "include",
+    "named": false
+  },
+  {
+    "type": "input",
+    "named": false
+  },
+  {
+    "type": "keycombo",
+    "named": true
+  },
+  {
+    "type": "kill",
+    "named": false
+  },
+  {
+    "type": "layout",
+    "named": false
+  },
+  {
+    "type": "mode",
+    "named": false
+  },
+  {
+    "type": "mouse_warping",
+    "named": false
+  },
+  {
+    "type": "move",
+    "named": false
+  },
+  {
+    "type": "new_float",
+    "named": false
+  },
+  {
+    "type": "new_window",
+    "named": false
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "output",
+    "named": false
+  },
+  {
+    "type": "popup_during_fullscreen",
+    "named": false
+  },
+  {
+    "type": "position",
+    "named": false
+  },
+  {
+    "type": "reload",
+    "named": false
+  },
+  {
+    "type": "resize",
+    "named": false
+  },
+  {
+    "type": "resolution",
+    "named": false
+  },
+  {
+    "type": "restart",
+    "named": false
+  },
+  {
+    "type": "seat",
+    "named": false
+  },
+  {
+    "type": "set",
+    "named": false
+  },
+  {
+    "type": "show_marks",
+    "named": false
+  },
+  {
+    "type": "smart_borders",
+    "named": false
+  },
+  {
+    "type": "smart_gaps",
+    "named": false
+  },
+  {
+    "type": "split",
+    "named": false
+  },
+  {
+    "type": "splith",
+    "named": false
+  },
+  {
+    "type": "splitv",
+    "named": false
+  },
+  {
+    "type": "status_command",
+    "named": false
+  },
+  {
+    "type": "sticky",
+    "named": false
+  },
+  {
+    "type": "swaybg_command",
+    "named": false
+  },
+  {
+    "type": "swaynag_command",
+    "named": false
+  },
+  {
+    "type": "tiling_drag",
+    "named": false
+  },
+  {
+    "type": "title_align",
+    "named": false
+  },
+  {
+    "type": "title_format",
+    "named": false
+  },
+  {
+    "type": "titlebar_border_thickness",
+    "named": false
+  },
+  {
+    "type": "titlebar_padding",
+    "named": false
+  },
+  {
+    "type": "unbindsym",
+    "named": false
+  },
+  {
+    "type": "unit_value",
+    "named": true
+  },
+  {
+    "type": "variable",
+    "named": true
+  },
+  {
+    "type": "word",
+    "named": true
+  },
+  {
+    "type": "workspace",
+    "named": false
+  },
+  {
+    "type": "workspace_auto_back_and_forth",
+    "named": false
+  },
+  {
+    "type": "workspace_layout",
+    "named": false
+  },
+  {
+    "type": "xkb_layout",
+    "named": false
+  },
+  {
+    "type": "xkb_model",
+    "named": false
+  },
+  {
+    "type": "xkb_options",
+    "named": false
+  },
+  {
+    "type": "xkb_variant",
+    "named": false
+  },
+  {
+    "type": "xwayland",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]
