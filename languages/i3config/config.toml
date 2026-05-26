@@ -1,6 +1,6 @@
 name = "i3/Sway Config"
 grammar = "i3config"
-path_suffixes = ["i3/config", "i3config", "swayconfig"]
+path_suffixes = ["i3/config", "sway/config", "i3wm-config", "swaywm-config"]
 line_comments = ["# "]
 tab_size = 4
 
