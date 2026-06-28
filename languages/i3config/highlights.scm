@@ -9,8 +9,8 @@
 (exec_always_statement "exec_always" @keyword)
 (assign_statement "assign" @keyword)
 (for_window_statement "for_window" @keyword)
+(no_focus_statement "no_focus" @keyword)
 (include_statement "include" @keyword)
-(mode_block "mode" @keyword)
 (bar_block "bar" @keyword)
 (command_statement (keyword) @keyword)
 (block_statement (keyword) @keyword)
@@ -41,8 +41,6 @@
 (color) @constant
 
 ; Blocks
-(mode_block "{" @punctuation.bracket)
-(mode_block "}" @punctuation.bracket)
 (bar_block "{" @punctuation.bracket)
 (bar_block "}" @punctuation.bracket)
 (block_statement "{" @punctuation.bracket)

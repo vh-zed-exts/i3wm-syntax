@@ -142,6 +142,25 @@
     }
   },
   {
+    "type": "criteria_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "criteria",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "criteria_pair",
     "named": true,
     "fields": {},
@@ -214,6 +233,21 @@
     }
   },
   {
+    "type": "for_window_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "statement",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "for_window_statement",
     "named": true,
     "fields": {},
@@ -223,6 +257,10 @@
       "types": [
         {
           "type": "criteria",
+          "named": true
+        },
+        {
+          "type": "for_window_block",
           "named": true
         },
         {
@@ -253,23 +291,15 @@
     "fields": {}
   },
   {
-    "type": "mode_block",
+    "type": "no_focus_statement",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "flag",
-          "named": true
-        },
-        {
-          "type": "statement",
-          "named": true
-        },
-        {
-          "type": "value",
+          "type": "criteria",
           "named": true
         }
       ]
@@ -347,6 +377,10 @@
           "named": true
         },
         {
+          "type": "criteria_command",
+          "named": true
+        },
+        {
           "type": "exec_always_statement",
           "named": true
         },
@@ -363,7 +397,7 @@
           "named": true
         },
         {
-          "type": "mode_block",
+          "type": "no_focus_statement",
           "named": true
         },
         {
@@ -444,7 +478,31 @@
     "named": false
   },
   {
+    "type": "accel_profile",
+    "named": false
+  },
+  {
+    "type": "active_workspace",
+    "named": false
+  },
+  {
+    "type": "adaptive_sync",
+    "named": false
+  },
+  {
+    "type": "allow_tearing",
+    "named": false
+  },
+  {
     "type": "assign",
+    "named": false
+  },
+  {
+    "type": "attach",
+    "named": false
+  },
+  {
+    "type": "background",
     "named": false
   },
   {
@@ -452,7 +510,23 @@
     "named": false
   },
   {
+    "type": "bg",
+    "named": false
+  },
+  {
     "type": "bindcode",
+    "named": false
+  },
+  {
+    "type": "bindgesture",
+    "named": false
+  },
+  {
+    "type": "binding_mode",
+    "named": false
+  },
+  {
+    "type": "binding_mode_indicator",
     "named": false
   },
   {
@@ -468,6 +542,18 @@
     "named": false
   },
   {
+    "type": "calibration_matrix",
+    "named": false
+  },
+  {
+    "type": "click_method",
+    "named": false
+  },
+  {
+    "type": "clickfinger_button_map",
+    "named": false
+  },
+  {
     "type": "client.background",
     "named": false
   },
@@ -477,6 +563,10 @@
   },
   {
     "type": "client.focused_inactive",
+    "named": false
+  },
+  {
+    "type": "client.focused_tab_title",
     "named": false
   },
   {
@@ -496,12 +586,28 @@
     "named": true
   },
   {
+    "type": "color_profile",
+    "named": false
+  },
+  {
+    "type": "colors",
+    "named": false
+  },
+  {
     "type": "command",
     "named": true
   },
   {
+    "type": "create_output",
+    "named": false
+  },
+  {
     "type": "criteria_key",
     "named": true
+  },
+  {
+    "type": "cursor",
+    "named": false
   },
   {
     "type": "default_border",
@@ -516,8 +622,40 @@
     "named": false
   },
   {
+    "type": "disable",
+    "named": false
+  },
+  {
+    "type": "dpms",
+    "named": false
+  },
+  {
+    "type": "drag",
+    "named": false
+  },
+  {
+    "type": "drag_lock",
+    "named": false
+  },
+  {
+    "type": "dwt",
+    "named": false
+  },
+  {
+    "type": "dwtp",
+    "named": false
+  },
+  {
+    "type": "enable",
+    "named": false
+  },
+  {
     "type": "escape_sequence",
     "named": true
+  },
+  {
+    "type": "events",
+    "named": false
   },
   {
     "type": "exec",
@@ -529,6 +667,10 @@
   },
   {
     "type": "exit",
+    "named": false
+  },
+  {
+    "type": "fallback",
     "named": false
   },
   {
@@ -568,11 +710,35 @@
     "named": false
   },
   {
+    "type": "focused_background",
+    "named": false
+  },
+  {
+    "type": "focused_separator",
+    "named": false
+  },
+  {
+    "type": "focused_statusline",
+    "named": false
+  },
+  {
+    "type": "focused_workspace",
+    "named": false
+  },
+  {
     "type": "font",
     "named": false
   },
   {
     "type": "for_window",
+    "named": false
+  },
+  {
+    "type": "force_display_urgency_hint",
+    "named": false
+  },
+  {
+    "type": "force_focus_wrapping",
     "named": false
   },
   {
@@ -584,7 +750,43 @@
     "named": false
   },
   {
+    "type": "hdr",
+    "named": false
+  },
+  {
+    "type": "height",
+    "named": false
+  },
+  {
+    "type": "hidden_state",
+    "named": false
+  },
+  {
+    "type": "hide_cursor",
+    "named": false
+  },
+  {
     "type": "hide_edge_borders",
+    "named": false
+  },
+  {
+    "type": "icon_theme",
+    "named": false
+  },
+  {
+    "type": "id",
+    "named": false
+  },
+  {
+    "type": "idle_inhibit",
+    "named": false
+  },
+  {
+    "type": "idle_wake",
+    "named": false
+  },
+  {
+    "type": "inactive_workspace",
     "named": false
   },
   {
@@ -592,7 +794,19 @@
     "named": false
   },
   {
+    "type": "inhibit_idle",
+    "named": false
+  },
+  {
     "type": "input",
+    "named": false
+  },
+  {
+    "type": "keyboard",
+    "named": false
+  },
+  {
+    "type": "keyboard_grouping",
     "named": false
   },
   {
@@ -608,7 +822,43 @@
     "named": false
   },
   {
+    "type": "left_handed",
+    "named": false
+  },
+  {
+    "type": "map_from_region",
+    "named": false
+  },
+  {
+    "type": "map_to_output",
+    "named": false
+  },
+  {
+    "type": "map_to_region",
+    "named": false
+  },
+  {
+    "type": "mark",
+    "named": false
+  },
+  {
+    "type": "max_render_time",
+    "named": false
+  },
+  {
+    "type": "middle_emulation",
+    "named": false
+  },
+  {
     "type": "mode",
+    "named": false
+  },
+  {
+    "type": "modeline",
+    "named": false
+  },
+  {
+    "type": "modifier",
     "named": false
   },
   {
@@ -620,6 +870,10 @@
     "named": false
   },
   {
+    "type": "natural_scroll",
+    "named": false
+  },
+  {
     "type": "new_float",
     "named": false
   },
@@ -628,11 +882,39 @@
     "named": false
   },
   {
+    "type": "no_focus",
+    "named": false
+  },
+  {
+    "type": "nop",
+    "named": false
+  },
+  {
     "type": "number",
     "named": true
   },
   {
+    "type": "opacity",
+    "named": false
+  },
+  {
     "type": "output",
+    "named": false
+  },
+  {
+    "type": "pango_markup",
+    "named": false
+  },
+  {
+    "type": "pointer",
+    "named": false
+  },
+  {
+    "type": "pointer_accel",
+    "named": false
+  },
+  {
+    "type": "pointer_constraint",
     "named": false
   },
   {
@@ -640,11 +922,43 @@
     "named": false
   },
   {
+    "type": "pos",
+    "named": false
+  },
+  {
     "type": "position",
     "named": false
   },
   {
+    "type": "power",
+    "named": false
+  },
+  {
+    "type": "primary_selection",
+    "named": false
+  },
+  {
     "type": "reload",
+    "named": false
+  },
+  {
+    "type": "rename",
+    "named": false
+  },
+  {
+    "type": "render_bit_depth",
+    "named": false
+  },
+  {
+    "type": "repeat_delay",
+    "named": false
+  },
+  {
+    "type": "repeat_rate",
+    "named": false
+  },
+  {
+    "type": "res",
     "named": false
   },
   {
@@ -660,11 +974,55 @@
     "named": false
   },
   {
+    "type": "rotation_angle",
+    "named": false
+  },
+  {
+    "type": "scale",
+    "named": false
+  },
+  {
+    "type": "scale_filter",
+    "named": false
+  },
+  {
+    "type": "scratchpad",
+    "named": false
+  },
+  {
+    "type": "scroll_button",
+    "named": false
+  },
+  {
+    "type": "scroll_button_lock",
+    "named": false
+  },
+  {
+    "type": "scroll_factor",
+    "named": false
+  },
+  {
+    "type": "scroll_method",
+    "named": false
+  },
+  {
     "type": "seat",
     "named": false
   },
   {
+    "type": "separator",
+    "named": false
+  },
+  {
+    "type": "separator_symbol",
+    "named": false
+  },
+  {
     "type": "set",
+    "named": false
+  },
+  {
+    "type": "shortcuts_inhibitor",
     "named": false
   },
   {
@@ -688,6 +1046,10 @@
     "named": false
   },
   {
+    "type": "splitt",
+    "named": false
+  },
+  {
     "type": "splitv",
     "named": false
   },
@@ -696,7 +1058,39 @@
     "named": false
   },
   {
+    "type": "status_edge_padding",
+    "named": false
+  },
+  {
+    "type": "status_padding",
+    "named": false
+  },
+  {
+    "type": "statusline",
+    "named": false
+  },
+  {
     "type": "sticky",
+    "named": false
+  },
+  {
+    "type": "strip_workspace_name",
+    "named": false
+  },
+  {
+    "type": "strip_workspace_numbers",
+    "named": false
+  },
+  {
+    "type": "subpixel",
+    "named": false
+  },
+  {
+    "type": "swap",
+    "named": false
+  },
+  {
+    "type": "swaybar_command",
     "named": false
   },
   {
@@ -708,7 +1102,31 @@
     "named": false
   },
   {
+    "type": "switch",
+    "named": false
+  },
+  {
+    "type": "tablet_pad",
+    "named": false
+  },
+  {
+    "type": "tablet_tool",
+    "named": false
+  },
+  {
+    "type": "tap",
+    "named": false
+  },
+  {
+    "type": "tap_button_map",
+    "named": false
+  },
+  {
     "type": "tiling_drag",
+    "named": false
+  },
+  {
+    "type": "tiling_drag_threshold",
     "named": false
   },
   {
@@ -728,12 +1146,72 @@
     "named": false
   },
   {
+    "type": "toggle",
+    "named": false
+  },
+  {
+    "type": "tool_mode",
+    "named": false
+  },
+  {
+    "type": "touch",
+    "named": false
+  },
+  {
+    "type": "transform",
+    "named": false
+  },
+  {
+    "type": "tray_bindcode",
+    "named": false
+  },
+  {
+    "type": "tray_bindsym",
+    "named": false
+  },
+  {
+    "type": "tray_output",
+    "named": false
+  },
+  {
+    "type": "tray_padding",
+    "named": false
+  },
+  {
+    "type": "unbindcode",
+    "named": false
+  },
+  {
+    "type": "unbindgesture",
+    "named": false
+  },
+  {
+    "type": "unbindswitch",
+    "named": false
+  },
+  {
     "type": "unbindsym",
     "named": false
   },
   {
     "type": "unit_value",
     "named": true
+  },
+  {
+    "type": "unmark",
+    "named": false
+  },
+  {
+    "type": "unplug",
+    "named": false
+  },
+  {
+    "type": "urgent",
+    "named": false
+  },
+  {
+    "type": "urgent_workspace",
+    "named": false
   },
   {
     "type": "variable",
@@ -752,7 +1230,31 @@
     "named": false
   },
   {
+    "type": "workspace_buttons",
+    "named": false
+  },
+  {
     "type": "workspace_layout",
+    "named": false
+  },
+  {
+    "type": "workspace_min_width",
+    "named": false
+  },
+  {
+    "type": "wrap_scroll",
+    "named": false
+  },
+  {
+    "type": "xcursor_theme",
+    "named": false
+  },
+  {
+    "type": "xkb_capslock",
+    "named": false
+  },
+  {
+    "type": "xkb_file",
     "named": false
   },
   {
@@ -764,7 +1266,19 @@
     "named": false
   },
   {
+    "type": "xkb_numlock",
+    "named": false
+  },
+  {
     "type": "xkb_options",
+    "named": false
+  },
+  {
+    "type": "xkb_rules",
+    "named": false
+  },
+  {
+    "type": "xkb_switch_layout",
     "named": false
   },
   {

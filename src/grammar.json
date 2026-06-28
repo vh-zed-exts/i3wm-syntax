@@ -58,7 +58,11 @@
             },
             {
               "type": "SYMBOL",
-              "name": "mode_block"
+              "name": "no_focus_statement"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "criteria_command"
             },
             {
               "type": "SYMBOL",
@@ -239,11 +243,87 @@
           "value": "for_window"
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "criteria"
+                },
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "value"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "for_window_block"
+            }
+          ]
+        }
+      ]
+    },
+    "for_window_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\r?\\n"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "statement"
+              },
+              {
+                "type": "PATTERN",
+                "value": "\\r?\\n"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "no_focus_statement": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "no_focus"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "criteria"
+        }
+      ]
+    },
+    "criteria_command": {
+      "type": "SEQ",
+      "members": [
+        {
           "type": "SYMBOL",
           "name": "criteria"
         },
         {
-          "type": "REPEAT1",
+          "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
             "name": "value"
@@ -263,63 +343,6 @@
           "name": "command"
         }
       ]
-    },
-    "mode_block": {
-      "type": "PREC",
-      "value": 1,
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "STRING",
-            "value": "mode"
-          },
-          {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "flag"
-              },
-              {
-                "type": "BLANK"
-              }
-            ]
-          },
-          {
-            "type": "SYMBOL",
-            "name": "value"
-          },
-          {
-            "type": "STRING",
-            "value": "{"
-          },
-          {
-            "type": "PATTERN",
-            "value": "\\r?\\n"
-          },
-          {
-            "type": "REPEAT",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "SYMBOL",
-                  "name": "statement"
-                },
-                {
-                  "type": "PATTERN",
-                  "value": "\\r?\\n"
-                }
-              ]
-            }
-          },
-          {
-            "type": "STRING",
-            "value": "}"
-          }
-        ]
-      }
     },
     "bar_block": {
       "type": "SEQ",
@@ -481,7 +504,7 @@
         },
         {
           "type": "PATTERN",
-          "value": "[^\\]\\s]+"
+          "value": "[^\\]\\s\"]+"
         }
       ]
     },
@@ -490,15 +513,115 @@
       "members": [
         {
           "type": "STRING",
-          "value": "workspace"
+          "value": "accel_profile"
         },
         {
           "type": "STRING",
-          "value": "output"
+          "value": "active_workspace"
         },
         {
           "type": "STRING",
-          "value": "floating_modifier"
+          "value": "adaptive_sync"
+        },
+        {
+          "type": "STRING",
+          "value": "allow_tearing"
+        },
+        {
+          "type": "STRING",
+          "value": "attach"
+        },
+        {
+          "type": "STRING",
+          "value": "background"
+        },
+        {
+          "type": "STRING",
+          "value": "bg"
+        },
+        {
+          "type": "STRING",
+          "value": "bindgesture"
+        },
+        {
+          "type": "STRING",
+          "value": "binding_mode"
+        },
+        {
+          "type": "STRING",
+          "value": "binding_mode_indicator"
+        },
+        {
+          "type": "STRING",
+          "value": "bindswitch"
+        },
+        {
+          "type": "STRING",
+          "value": "border"
+        },
+        {
+          "type": "STRING",
+          "value": "calibration_matrix"
+        },
+        {
+          "type": "STRING",
+          "value": "click_method"
+        },
+        {
+          "type": "STRING",
+          "value": "clickfinger_button_map"
+        },
+        {
+          "type": "STRING",
+          "value": "client.background"
+        },
+        {
+          "type": "STRING",
+          "value": "client.focused"
+        },
+        {
+          "type": "STRING",
+          "value": "client.focused_inactive"
+        },
+        {
+          "type": "STRING",
+          "value": "client.focused_tab_title"
+        },
+        {
+          "type": "STRING",
+          "value": "client.placeholder"
+        },
+        {
+          "type": "STRING",
+          "value": "client.unfocused"
+        },
+        {
+          "type": "STRING",
+          "value": "client.urgent"
+        },
+        {
+          "type": "STRING",
+          "value": "color_profile"
+        },
+        {
+          "type": "STRING",
+          "value": "colors"
+        },
+        {
+          "type": "STRING",
+          "value": "create_output"
+        },
+        {
+          "type": "STRING",
+          "value": "cursor"
+        },
+        {
+          "type": "STRING",
+          "value": "default_border"
+        },
+        {
+          "type": "STRING",
+          "value": "default_floating_border"
         },
         {
           "type": "STRING",
@@ -506,11 +629,63 @@
         },
         {
           "type": "STRING",
-          "value": "workspace_layout"
+          "value": "disable"
         },
         {
           "type": "STRING",
-          "value": "font"
+          "value": "dpms"
+        },
+        {
+          "type": "STRING",
+          "value": "drag"
+        },
+        {
+          "type": "STRING",
+          "value": "drag_lock"
+        },
+        {
+          "type": "STRING",
+          "value": "dwt"
+        },
+        {
+          "type": "STRING",
+          "value": "dwtp"
+        },
+        {
+          "type": "STRING",
+          "value": "enable"
+        },
+        {
+          "type": "STRING",
+          "value": "events"
+        },
+        {
+          "type": "STRING",
+          "value": "exit"
+        },
+        {
+          "type": "STRING",
+          "value": "fallback"
+        },
+        {
+          "type": "STRING",
+          "value": "floating"
+        },
+        {
+          "type": "STRING",
+          "value": "floating_maximum_size"
+        },
+        {
+          "type": "STRING",
+          "value": "floating_minimum_size"
+        },
+        {
+          "type": "STRING",
+          "value": "floating_modifier"
+        },
+        {
+          "type": "STRING",
+          "value": "focus"
         },
         {
           "type": "STRING",
@@ -526,7 +701,191 @@
         },
         {
           "type": "STRING",
+          "value": "focused_background"
+        },
+        {
+          "type": "STRING",
+          "value": "focused_separator"
+        },
+        {
+          "type": "STRING",
+          "value": "focused_statusline"
+        },
+        {
+          "type": "STRING",
+          "value": "focused_workspace"
+        },
+        {
+          "type": "STRING",
+          "value": "font"
+        },
+        {
+          "type": "STRING",
+          "value": "force_display_urgency_hint"
+        },
+        {
+          "type": "STRING",
+          "value": "force_focus_wrapping"
+        },
+        {
+          "type": "STRING",
+          "value": "fullscreen"
+        },
+        {
+          "type": "STRING",
+          "value": "gaps"
+        },
+        {
+          "type": "STRING",
+          "value": "hdr"
+        },
+        {
+          "type": "STRING",
+          "value": "height"
+        },
+        {
+          "type": "STRING",
+          "value": "hidden_state"
+        },
+        {
+          "type": "STRING",
+          "value": "hide_cursor"
+        },
+        {
+          "type": "STRING",
+          "value": "hide_edge_borders"
+        },
+        {
+          "type": "STRING",
+          "value": "icon_theme"
+        },
+        {
+          "type": "STRING",
+          "value": "id"
+        },
+        {
+          "type": "STRING",
+          "value": "idle_inhibit"
+        },
+        {
+          "type": "STRING",
+          "value": "idle_wake"
+        },
+        {
+          "type": "STRING",
+          "value": "inactive_workspace"
+        },
+        {
+          "type": "STRING",
+          "value": "inhibit_idle"
+        },
+        {
+          "type": "STRING",
+          "value": "input"
+        },
+        {
+          "type": "STRING",
+          "value": "keyboard"
+        },
+        {
+          "type": "STRING",
+          "value": "keyboard_grouping"
+        },
+        {
+          "type": "STRING",
+          "value": "kill"
+        },
+        {
+          "type": "STRING",
+          "value": "layout"
+        },
+        {
+          "type": "STRING",
+          "value": "left_handed"
+        },
+        {
+          "type": "STRING",
+          "value": "map_from_region"
+        },
+        {
+          "type": "STRING",
+          "value": "map_to_output"
+        },
+        {
+          "type": "STRING",
+          "value": "map_to_region"
+        },
+        {
+          "type": "STRING",
+          "value": "mark"
+        },
+        {
+          "type": "STRING",
+          "value": "max_render_time"
+        },
+        {
+          "type": "STRING",
+          "value": "middle_emulation"
+        },
+        {
+          "type": "STRING",
+          "value": "mode"
+        },
+        {
+          "type": "STRING",
+          "value": "modeline"
+        },
+        {
+          "type": "STRING",
+          "value": "modifier"
+        },
+        {
+          "type": "STRING",
           "value": "mouse_warping"
+        },
+        {
+          "type": "STRING",
+          "value": "move"
+        },
+        {
+          "type": "STRING",
+          "value": "natural_scroll"
+        },
+        {
+          "type": "STRING",
+          "value": "new_float"
+        },
+        {
+          "type": "STRING",
+          "value": "new_window"
+        },
+        {
+          "type": "STRING",
+          "value": "nop"
+        },
+        {
+          "type": "STRING",
+          "value": "opacity"
+        },
+        {
+          "type": "STRING",
+          "value": "output"
+        },
+        {
+          "type": "STRING",
+          "value": "pango_markup"
+        },
+        {
+          "type": "STRING",
+          "value": "pointer"
+        },
+        {
+          "type": "STRING",
+          "value": "pointer_accel"
+        },
+        {
+          "type": "STRING",
+          "value": "pointer_constraint"
         },
         {
           "type": "STRING",
@@ -534,15 +893,107 @@
         },
         {
           "type": "STRING",
-          "value": "default_border"
+          "value": "pos"
         },
         {
           "type": "STRING",
-          "value": "default_floating_border"
+          "value": "position"
         },
         {
           "type": "STRING",
-          "value": "hide_edge_borders"
+          "value": "power"
+        },
+        {
+          "type": "STRING",
+          "value": "primary_selection"
+        },
+        {
+          "type": "STRING",
+          "value": "reload"
+        },
+        {
+          "type": "STRING",
+          "value": "rename"
+        },
+        {
+          "type": "STRING",
+          "value": "render_bit_depth"
+        },
+        {
+          "type": "STRING",
+          "value": "repeat_delay"
+        },
+        {
+          "type": "STRING",
+          "value": "repeat_rate"
+        },
+        {
+          "type": "STRING",
+          "value": "res"
+        },
+        {
+          "type": "STRING",
+          "value": "resize"
+        },
+        {
+          "type": "STRING",
+          "value": "resolution"
+        },
+        {
+          "type": "STRING",
+          "value": "restart"
+        },
+        {
+          "type": "STRING",
+          "value": "rotation_angle"
+        },
+        {
+          "type": "STRING",
+          "value": "scale"
+        },
+        {
+          "type": "STRING",
+          "value": "scale_filter"
+        },
+        {
+          "type": "STRING",
+          "value": "scratchpad"
+        },
+        {
+          "type": "STRING",
+          "value": "scroll_button"
+        },
+        {
+          "type": "STRING",
+          "value": "scroll_button_lock"
+        },
+        {
+          "type": "STRING",
+          "value": "scroll_factor"
+        },
+        {
+          "type": "STRING",
+          "value": "scroll_method"
+        },
+        {
+          "type": "STRING",
+          "value": "seat"
+        },
+        {
+          "type": "STRING",
+          "value": "separator"
+        },
+        {
+          "type": "STRING",
+          "value": "separator_symbol"
+        },
+        {
+          "type": "STRING",
+          "value": "shortcuts_inhibitor"
+        },
+        {
+          "type": "STRING",
+          "value": "show_marks"
         },
         {
           "type": "STRING",
@@ -554,42 +1005,6 @@
         },
         {
           "type": "STRING",
-          "value": "gaps"
-        },
-        {
-          "type": "STRING",
-          "value": "border"
-        },
-        {
-          "type": "STRING",
-          "value": "new_window"
-        },
-        {
-          "type": "STRING",
-          "value": "new_float"
-        },
-        {
-          "type": "STRING",
-          "value": "floating_minimum_size"
-        },
-        {
-          "type": "STRING",
-          "value": "floating_maximum_size"
-        },
-        {
-          "type": "STRING",
-          "value": "focus"
-        },
-        {
-          "type": "STRING",
-          "value": "move"
-        },
-        {
-          "type": "STRING",
-          "value": "layout"
-        },
-        {
-          "type": "STRING",
           "value": "split"
         },
         {
@@ -598,7 +1013,27 @@
         },
         {
           "type": "STRING",
+          "value": "splitt"
+        },
+        {
+          "type": "STRING",
           "value": "splitv"
+        },
+        {
+          "type": "STRING",
+          "value": "status_command"
+        },
+        {
+          "type": "STRING",
+          "value": "status_edge_padding"
+        },
+        {
+          "type": "STRING",
+          "value": "status_padding"
+        },
+        {
+          "type": "STRING",
+          "value": "statusline"
         },
         {
           "type": "STRING",
@@ -606,83 +1041,23 @@
         },
         {
           "type": "STRING",
-          "value": "resize"
+          "value": "strip_workspace_name"
         },
         {
           "type": "STRING",
-          "value": "kill"
+          "value": "strip_workspace_numbers"
         },
         {
           "type": "STRING",
-          "value": "reload"
+          "value": "subpixel"
         },
         {
           "type": "STRING",
-          "value": "restart"
+          "value": "swap"
         },
         {
           "type": "STRING",
-          "value": "exit"
-        },
-        {
-          "type": "STRING",
-          "value": "fullscreen"
-        },
-        {
-          "type": "STRING",
-          "value": "floating"
-        },
-        {
-          "type": "STRING",
-          "value": "input"
-        },
-        {
-          "type": "STRING",
-          "value": "seat"
-        },
-        {
-          "type": "STRING",
-          "value": "xwayland"
-        },
-        {
-          "type": "STRING",
-          "value": "titlebar_border_thickness"
-        },
-        {
-          "type": "STRING",
-          "value": "titlebar_padding"
-        },
-        {
-          "type": "STRING",
-          "value": "title_format"
-        },
-        {
-          "type": "STRING",
-          "value": "title_align"
-        },
-        {
-          "type": "STRING",
-          "value": "client.focused"
-        },
-        {
-          "type": "STRING",
-          "value": "client.focused_inactive"
-        },
-        {
-          "type": "STRING",
-          "value": "client.unfocused"
-        },
-        {
-          "type": "STRING",
-          "value": "client.urgent"
-        },
-        {
-          "type": "STRING",
-          "value": "client.placeholder"
-        },
-        {
-          "type": "STRING",
-          "value": "client.background"
+          "value": "swaybar_command"
         },
         {
           "type": "STRING",
@@ -694,11 +1069,23 @@
         },
         {
           "type": "STRING",
-          "value": "unbindsym"
+          "value": "switch"
         },
         {
           "type": "STRING",
-          "value": "bindswitch"
+          "value": "tablet_pad"
+        },
+        {
+          "type": "STRING",
+          "value": "tablet_tool"
+        },
+        {
+          "type": "STRING",
+          "value": "tap"
+        },
+        {
+          "type": "STRING",
+          "value": "tap_button_map"
         },
         {
           "type": "STRING",
@@ -706,7 +1093,91 @@
         },
         {
           "type": "STRING",
-          "value": "show_marks"
+          "value": "tiling_drag_threshold"
+        },
+        {
+          "type": "STRING",
+          "value": "title_align"
+        },
+        {
+          "type": "STRING",
+          "value": "title_format"
+        },
+        {
+          "type": "STRING",
+          "value": "titlebar_border_thickness"
+        },
+        {
+          "type": "STRING",
+          "value": "titlebar_padding"
+        },
+        {
+          "type": "STRING",
+          "value": "toggle"
+        },
+        {
+          "type": "STRING",
+          "value": "tool_mode"
+        },
+        {
+          "type": "STRING",
+          "value": "touch"
+        },
+        {
+          "type": "STRING",
+          "value": "transform"
+        },
+        {
+          "type": "STRING",
+          "value": "tray_bindcode"
+        },
+        {
+          "type": "STRING",
+          "value": "tray_bindsym"
+        },
+        {
+          "type": "STRING",
+          "value": "tray_output"
+        },
+        {
+          "type": "STRING",
+          "value": "tray_padding"
+        },
+        {
+          "type": "STRING",
+          "value": "unbindcode"
+        },
+        {
+          "type": "STRING",
+          "value": "unbindgesture"
+        },
+        {
+          "type": "STRING",
+          "value": "unbindswitch"
+        },
+        {
+          "type": "STRING",
+          "value": "unbindsym"
+        },
+        {
+          "type": "STRING",
+          "value": "unmark"
+        },
+        {
+          "type": "STRING",
+          "value": "unplug"
+        },
+        {
+          "type": "STRING",
+          "value": "urgent"
+        },
+        {
+          "type": "STRING",
+          "value": "urgent_workspace"
+        },
+        {
+          "type": "STRING",
+          "value": "workspace"
         },
         {
           "type": "STRING",
@@ -714,11 +1185,31 @@
         },
         {
           "type": "STRING",
-          "value": "position"
+          "value": "workspace_buttons"
         },
         {
           "type": "STRING",
-          "value": "status_command"
+          "value": "workspace_layout"
+        },
+        {
+          "type": "STRING",
+          "value": "workspace_min_width"
+        },
+        {
+          "type": "STRING",
+          "value": "wrap_scroll"
+        },
+        {
+          "type": "STRING",
+          "value": "xcursor_theme"
+        },
+        {
+          "type": "STRING",
+          "value": "xkb_capslock"
+        },
+        {
+          "type": "STRING",
+          "value": "xkb_file"
         },
         {
           "type": "STRING",
@@ -726,7 +1217,23 @@
         },
         {
           "type": "STRING",
+          "value": "xkb_model"
+        },
+        {
+          "type": "STRING",
+          "value": "xkb_numlock"
+        },
+        {
+          "type": "STRING",
           "value": "xkb_options"
+        },
+        {
+          "type": "STRING",
+          "value": "xkb_rules"
+        },
+        {
+          "type": "STRING",
+          "value": "xkb_switch_layout"
         },
         {
           "type": "STRING",
@@ -734,15 +1241,7 @@
         },
         {
           "type": "STRING",
-          "value": "xkb_model"
-        },
-        {
-          "type": "STRING",
-          "value": "resolution"
-        },
-        {
-          "type": "STRING",
-          "value": "mode"
+          "value": "xwayland"
         }
       ]
     },
@@ -838,13 +1337,17 @@
     },
     "word": {
       "type": "PATTERN",
-      "value": "[^\\s\\[\\]{}#\"\\n][^\\s\\[\\]{}#\"\\n]*"
+      "value": "[^\\s\\[\\]{}#\"\\n\\\\]+"
     }
   },
   "extras": [
     {
       "type": "PATTERN",
       "value": "[ \\t]"
+    },
+    {
+      "type": "PATTERN",
+      "value": "\\\\\\r?\\n"
     }
   ],
   "conflicts": [],
