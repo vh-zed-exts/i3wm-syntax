@@ -15,6 +15,10 @@
 (command_statement (keyword) @keyword)
 (block_statement (keyword) @keyword)
 
+; Command verbs / directives and enum values used as arguments
+(command_keyword) @keyword
+(command_value) @constant.builtin
+
 ; Variables
 (variable) @variable
 

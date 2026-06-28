@@ -103,6 +103,11 @@
     }
   },
   {
+    "type": "command_keyword",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "command_statement",
     "named": true,
     "fields": {},
@@ -120,6 +125,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "command_value",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "comment",
@@ -435,6 +445,14 @@
           "named": true
         },
         {
+          "type": "command_keyword",
+          "named": true
+        },
+        {
+          "type": "command_value",
+          "named": true
+        },
+        {
           "type": "number",
           "named": true
         },
@@ -478,6 +496,10 @@
     "named": false
   },
   {
+    "type": "absolute",
+    "named": false
+  },
+  {
     "type": "accel_profile",
     "named": false
   },
@@ -490,6 +512,10 @@
     "named": false
   },
   {
+    "type": "all",
+    "named": false
+  },
+  {
     "type": "allow_tearing",
     "named": false
   },
@@ -499,6 +525,14 @@
   },
   {
     "type": "attach",
+    "named": false
+  },
+  {
+    "type": "auto",
+    "named": false
+  },
+  {
+    "type": "back_and_forth",
     "named": false
   },
   {
@@ -542,7 +576,19 @@
     "named": false
   },
   {
+    "type": "bottom",
+    "named": false
+  },
+  {
     "type": "calibration_matrix",
+    "named": false
+  },
+  {
+    "type": "center",
+    "named": false
+  },
+  {
+    "type": "child",
     "named": false
   },
   {
@@ -598,6 +644,10 @@
     "named": true
   },
   {
+    "type": "container",
+    "named": false
+  },
+  {
     "type": "create_output",
     "named": false
   },
@@ -606,7 +656,15 @@
     "named": true
   },
   {
+    "type": "current",
+    "named": false
+  },
+  {
     "type": "cursor",
+    "named": false
+  },
+  {
+    "type": "default",
     "named": false
   },
   {
@@ -623,6 +681,14 @@
   },
   {
     "type": "disable",
+    "named": false
+  },
+  {
+    "type": "disabled",
+    "named": false
+  },
+  {
+    "type": "down",
     "named": false
   },
   {
@@ -650,6 +716,10 @@
     "named": false
   },
   {
+    "type": "enabled",
+    "named": false
+  },
+  {
     "type": "escape_sequence",
     "named": true
   },
@@ -671,6 +741,18 @@
   },
   {
     "type": "fallback",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "fill",
+    "named": false
+  },
+  {
+    "type": "fit",
     "named": false
   },
   {
@@ -742,11 +824,23 @@
     "named": false
   },
   {
+    "type": "from",
+    "named": false
+  },
+  {
     "type": "fullscreen",
     "named": false
   },
   {
     "type": "gaps",
+    "named": false
+  },
+  {
+    "type": "global",
+    "named": false
+  },
+  {
+    "type": "grow",
     "named": false
   },
   {
@@ -762,11 +856,19 @@
     "named": false
   },
   {
+    "type": "hide",
+    "named": false
+  },
+  {
     "type": "hide_cursor",
     "named": false
   },
   {
     "type": "hide_edge_borders",
+    "named": false
+  },
+  {
+    "type": "horizontal",
     "named": false
   },
   {
@@ -798,6 +900,10 @@
     "named": false
   },
   {
+    "type": "inner",
+    "named": false
+  },
+  {
     "type": "input",
     "named": false
   },
@@ -818,7 +924,23 @@
     "named": false
   },
   {
+    "type": "latest",
+    "named": false
+  },
+  {
+    "type": "layer",
+    "named": false
+  },
+  {
     "type": "layout",
+    "named": false
+  },
+  {
+    "type": "leave_fullscreen",
+    "named": false
+  },
+  {
+    "type": "left",
     "named": false
   },
   {
@@ -862,6 +984,10 @@
     "named": false
   },
   {
+    "type": "mouse",
+    "named": false
+  },
+  {
     "type": "mouse_warping",
     "named": false
   },
@@ -882,7 +1008,19 @@
     "named": false
   },
   {
+    "type": "next",
+    "named": false
+  },
+  {
+    "type": "no",
+    "named": false
+  },
+  {
     "type": "no_focus",
+    "named": false
+  },
+  {
+    "type": "none",
     "named": false
   },
   {
@@ -890,11 +1028,27 @@
     "named": false
   },
   {
+    "type": "normal",
+    "named": false
+  },
+  {
     "type": "number",
     "named": true
   },
   {
+    "type": "off",
+    "named": false
+  },
+  {
+    "type": "on",
+    "named": false
+  },
+  {
     "type": "opacity",
+    "named": false
+  },
+  {
+    "type": "outer",
     "named": false
   },
   {
@@ -902,7 +1056,19 @@
     "named": false
   },
   {
+    "type": "overlay",
+    "named": false
+  },
+  {
     "type": "pango_markup",
+    "named": false
+  },
+  {
+    "type": "parent",
+    "named": false
+  },
+  {
+    "type": "pixel",
     "named": false
   },
   {
@@ -934,7 +1100,19 @@
     "named": false
   },
   {
+    "type": "ppt",
+    "named": false
+  },
+  {
+    "type": "prev",
+    "named": false
+  },
+  {
     "type": "primary_selection",
+    "named": false
+  },
+  {
+    "type": "px",
     "named": false
   },
   {
@@ -971,6 +1149,10 @@
   },
   {
     "type": "restart",
+    "named": false
+  },
+  {
+    "type": "right",
     "named": false
   },
   {
@@ -1026,7 +1208,23 @@
     "named": false
   },
   {
+    "type": "show",
+    "named": false
+  },
+  {
     "type": "show_marks",
+    "named": false
+  },
+  {
+    "type": "shrink",
+    "named": false
+  },
+  {
+    "type": "sibling",
+    "named": false
+  },
+  {
+    "type": "smart",
     "named": false
   },
   {
@@ -1035,6 +1233,10 @@
   },
   {
     "type": "smart_gaps",
+    "named": false
+  },
+  {
+    "type": "solid_color",
     "named": false
   },
   {
@@ -1051,6 +1253,10 @@
   },
   {
     "type": "splitv",
+    "named": false
+  },
+  {
+    "type": "stacking",
     "named": false
   },
   {
@@ -1071,6 +1277,10 @@
   },
   {
     "type": "sticky",
+    "named": false
+  },
+  {
+    "type": "stretch",
     "named": false
   },
   {
@@ -1106,6 +1316,10 @@
     "named": false
   },
   {
+    "type": "tabbed",
+    "named": false
+  },
+  {
     "type": "tablet_pad",
     "named": false
   },
@@ -1119,6 +1333,10 @@
   },
   {
     "type": "tap_button_map",
+    "named": false
+  },
+  {
+    "type": "tiling",
     "named": false
   },
   {
@@ -1146,11 +1364,19 @@
     "named": false
   },
   {
+    "type": "to",
+    "named": false
+  },
+  {
     "type": "toggle",
     "named": false
   },
   {
     "type": "tool_mode",
+    "named": false
+  },
+  {
+    "type": "top",
     "named": false
   },
   {
@@ -1175,6 +1401,10 @@
   },
   {
     "type": "tray_padding",
+    "named": false
+  },
+  {
+    "type": "true",
     "named": false
   },
   {
@@ -1206,6 +1436,10 @@
     "named": false
   },
   {
+    "type": "up",
+    "named": false
+  },
+  {
     "type": "urgent",
     "named": false
   },
@@ -1216,6 +1450,14 @@
   {
     "type": "variable",
     "named": true
+  },
+  {
+    "type": "vertical",
+    "named": false
+  },
+  {
+    "type": "window",
+    "named": false
   },
   {
     "type": "word",
@@ -1287,6 +1529,10 @@
   },
   {
     "type": "xwayland",
+    "named": false
+  },
+  {
+    "type": "yes",
     "named": false
   },
   {
