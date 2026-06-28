@@ -3,7 +3,8 @@
 module.exports = grammar({
   name: "i3config",
 
-  extras: ($) => [/[ \t]/, /\\\r?\n/],
+  // `,` and `;` are command separators in i3/sway commands, not part of any value.
+  extras: ($) => [/[ \t]/, /\\\r?\n/, /[,;]/],
 
   rules: {
     source_file: ($) => repeat(choice($.statement, /\r?\n/)),
@@ -318,6 +319,6 @@ module.exports = grammar({
 
     command: ($) => /[^\n]+/,
 
-    word: ($) => /[^\s\[\]{}#"\n\\]+/,
+    word: ($) => /[^\s\[\]{}#"\n\\,;]+/,
   },
 });
