@@ -34,6 +34,25 @@
     }
   },
   {
+    "type": "bind_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "binding",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "bindcode_statement",
     "named": true,
     "fields": {},
@@ -42,9 +61,32 @@
       "required": true,
       "types": [
         {
+          "type": "bind_block",
+          "named": true
+        },
+        {
           "type": "flag",
           "named": true
         },
+        {
+          "type": "keycombo",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "binding",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
         {
           "type": "keycombo",
           "named": true
@@ -64,6 +106,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bind_block",
+          "named": true
+        },
         {
           "type": "flag",
           "named": true
@@ -217,7 +263,30 @@
           "named": true
         },
         {
+          "type": "exec_block",
+          "named": true
+        },
+        {
           "type": "flag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "exec_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "comment",
           "named": true
         }
       ]
@@ -233,6 +302,10 @@
       "types": [
         {
           "type": "command",
+          "named": true
+        },
+        {
+          "type": "exec_block",
           "named": true
         },
         {

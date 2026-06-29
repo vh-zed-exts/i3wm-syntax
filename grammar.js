@@ -39,23 +39,38 @@ module.exports = grammar({
       seq(
         "bindsym",
         repeat($.flag),
-        $.keycombo,
-        repeat1($.value)
+        choice(
+          seq($.keycombo, repeat1($.value)),
+          $.bind_block
+        )
       ),
 
     bindcode_statement: ($) =>
       seq(
         "bindcode",
         repeat($.flag),
-        $.keycombo,
-        repeat1($.value)
+        choice(
+          seq($.keycombo, repeat1($.value)),
+          $.bind_block
+        )
       ),
 
+    // Block form: `bindsym --to-code { <keycombo> <command> ... }`.
+    bind_block: ($) =>
+      seq("{", /\r?\n/, repeat(choice($.binding, $.comment, /\r?\n/)), "}"),
+
+    binding: ($) => seq($.keycombo, repeat1($.value)),
+
     exec_statement: ($) =>
-      seq("exec", repeat($.flag), $.command),
+      seq("exec", repeat($.flag), choice($.command, $.exec_block)),
 
     exec_always_statement: ($) =>
-      seq("exec_always", repeat($.flag), $.command),
+      seq("exec_always", repeat($.flag), choice($.command, $.exec_block)),
+
+    // Block form: `exec_always { <shell command> ... }`. Each inner line is an
+    // opaque shell command, so it is kept as a single `command` token.
+    exec_block: ($) =>
+      seq("{", /\r?\n/, repeat(choice($.comment, $.command, /\r?\n/)), "}"),
 
     assign_statement: ($) =>
       seq("assign", $.criteria, repeat1($.value)),
@@ -289,8 +304,9 @@ module.exports = grammar({
         "xwayland"
       ),
 
-    // Key combo: handles things like $mod+Return, $mod+Shift+q, Escape, etc.
-    keycombo: ($) => /(\$[a-zA-Z_][a-zA-Z0-9_]*\+)?[a-zA-Z0-9_+]+/,
+    // Key combo: handles $mod+Return, $mod+Shift+q, $mod+$ctrl+m, Escape, etc.
+    // Any '+'-separated sequence of $variables and/or key names.
+    keycombo: ($) => /\$?[a-zA-Z0-9_]+(\+\$?[a-zA-Z0-9_]+)*/,
 
     flag: ($) => /--[a-zA-Z0-9_-]+/,
 

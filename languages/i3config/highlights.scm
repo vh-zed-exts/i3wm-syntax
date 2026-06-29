@@ -26,8 +26,7 @@
 (flag) @constant
 
 ; Key combinations
-(bindsym_statement (keycombo) @string.special)
-(bindcode_statement (keycombo) @string.special)
+(keycombo) @string.special
 
 ; Criteria
 (criteria "[" @punctuation.bracket)

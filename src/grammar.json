@@ -136,15 +136,29 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "keycombo"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "value"
-          }
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "keycombo"
+                },
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "value"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "bind_block"
+            }
+          ]
         }
       ]
     },
@@ -162,6 +176,73 @@
             "name": "flag"
           }
         },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "keycombo"
+                },
+                {
+                  "type": "REPEAT1",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "value"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "bind_block"
+            }
+          ]
+        }
+      ]
+    },
+    "bind_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\r?\\n"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "binding"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "comment"
+              },
+              {
+                "type": "PATTERN",
+                "value": "\\r?\\n"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
+        }
+      ]
+    },
+    "binding": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "SYMBOL",
           "name": "keycombo"
@@ -190,8 +271,17 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "command"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "command"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "exec_block"
+            }
+          ]
         }
       ]
     },
@@ -210,8 +300,54 @@
           }
         },
         {
-          "type": "SYMBOL",
-          "name": "command"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "command"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "exec_block"
+            }
+          ]
+        }
+      ]
+    },
+    "exec_block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "{"
+        },
+        {
+          "type": "PATTERN",
+          "value": "\\r?\\n"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "comment"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "command"
+              },
+              {
+                "type": "PATTERN",
+                "value": "\\r?\\n"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "}"
         }
       ]
     },
@@ -1247,7 +1383,7 @@
     },
     "keycombo": {
       "type": "PATTERN",
-      "value": "(\\$[a-zA-Z_][a-zA-Z0-9_]*\\+)?[a-zA-Z0-9_+]+"
+      "value": "\\$?[a-zA-Z0-9_]+(\\+\\$?[a-zA-Z0-9_]+)*"
     },
     "flag": {
       "type": "PATTERN",
